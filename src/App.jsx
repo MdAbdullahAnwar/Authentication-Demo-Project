@@ -4,7 +4,7 @@ import Layout from './components/Layout/Layout';
 import UserProfile from './components/Profile/UserProfile.jsx';
 import AuthPage from './pages/AuthPage';
 import HomePage from './pages/HomePage';
-import './App.css';  // Import the CSS file for global styles
+import './App.css';  
 
 function App() {
   return (
