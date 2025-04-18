@@ -1,4 +1,5 @@
 import { useState, useRef, useContext } from "react";
+import { useHistory } from 'react-router-dom';
 import classes from "./AuthForm.module.css";
 import AuthContext from "../../Store/auth-context";
 
@@ -7,6 +8,7 @@ const AuthForm = () => {
   const passwordInputRef = useRef();
 
   const authCtx = useContext(AuthContext);
+  const history = useHistory();
 
   const [isLogin, setIsLogin] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
@@ -24,7 +26,7 @@ const AuthForm = () => {
     setIsLoading(true);
 
     let url;
-    
+  
     if (isLogin) {
       url =
         "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyCBusc4xs-kpIr20qo28wqGKfNI5MJO2s0";
@@ -57,6 +59,7 @@ const AuthForm = () => {
       })
       .then((data) => {
         authCtx.login(data.idToken);
+        history.replace('/');
       })
       .catch((err) => {
         alert(err);
