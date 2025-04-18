@@ -24,6 +24,7 @@ const AuthForm = () => {
     setIsLoading(true);
 
     let url;
+    
     if (isLogin) {
       url =
         "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyCBusc4xs-kpIr20qo28wqGKfNI5MJO2s0";
